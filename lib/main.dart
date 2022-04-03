@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:lean_provider/book_list_page.dart';
 import 'package:lean_provider/main_model.dart';
 import 'package:provider/provider.dart';
+
 
 void main() {runApp(MyApp());}
 
@@ -30,8 +32,11 @@ class MyApp extends StatelessWidget {
                     TextButton(
                       child: Text('ボタン'),
                       onPressed: (){
-                        model.changeWakanText();
-                        },
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => BookList()),
+                        );
+                      },
                     ),
                   ],
                 ),
